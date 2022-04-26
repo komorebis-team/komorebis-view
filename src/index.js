@@ -27,7 +27,6 @@ root.render(
                       </RequireAuth>
                   }>
                       <Route path="search" element={<SearchRecording/>}/>
-                      <Route path="record" element={<App/>}/>
                       <Route path="users" element={<UsersCatalogue />}/>
                       <Route path="tags" element={<TagsCatalogue />}/>
                       <Route path="statistics" element={<App/>}/>

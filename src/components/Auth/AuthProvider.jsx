@@ -9,18 +9,23 @@ export function AuthProvider({children}) {
     console.log(AuthContext);
     console.log(auth.user)
 
-    let [user, setUser] = React.useState(JSON.parse(localStorage.getItem("user")) || auth.user);
+    let initializeUser = () => JSON.parse(localStorage.getItem("user")) || auth.user
+    let [user, setUser] = React.useState(initializeUser());
 
     let signin = (username, password) => {
         return auth.signin(username, password, () => {
-            console.log("Setting user in the provider state")
             let newUser = JSON.parse(localStorage.getItem("user"))
             setUser(newUser);
-            console.log(user)
         });
     };
 
-    let value = {user, signin};
+    let signout = () => {
+        return auth.signout(() => {
+            setUser(initializeUser())
+        })
+    }
+
+    let value = {user, signin, signout};
     console.log(value)
 
     console.log(children)

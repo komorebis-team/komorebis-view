@@ -30,10 +30,18 @@ const auth = {
             auth.user.role = ""
 
         }
-        console.log(auth.user)
         localStorage.setItem("user", JSON.stringify(auth.user))
         callback()
     },
+    signout: (callback) => {
+        auth.user.triedLogin = false;
+        auth.user.name = ""
+        auth.user.lastname = ""
+        auth.user.username = ""
+        auth.user.role = ""
+        localStorage.removeItem("user")
+        callback()
+    }
 }
 
 export default auth;

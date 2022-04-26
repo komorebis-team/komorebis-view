@@ -53,10 +53,10 @@ function redirectUser(user){
         return null
     }
     if (user.role === "admin"){
-        return <Navigate to="/admin/"/>
+        return <Navigate to="/admin/search"/>
     }
     if (user.role === "agent"){
-        return <Navigate to="/agent/"/>
+        return <Navigate to="/agent/search"/>
     }
 }
 

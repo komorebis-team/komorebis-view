@@ -6,7 +6,7 @@ import {css} from "@emotion/css";
 import NavBarButton from "./NavBarButton";
 import {useAuth} from "../Auth/AuthProvider";
 
-const mainNavBar = css`
+const mainNavBar = (numOptions) => css`
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -22,7 +22,7 @@ const mainNavBar = css`
   }
 
   & > div:first-child{
-    height: 70vh;
+    height: ${(14*numOptions)}vh;
     max-height: 70vh;
     display: flex;
     flex-flow: column nowrap;
@@ -51,11 +51,12 @@ const roleButtonsMapping = {
 
 export default function NavBar(){
     let auth=useAuth();
+    let keys = Object.keys(roleButtonsMapping[auth.user.role])
     return (
-        <nav className={mainNavBar}>
+        <nav className={mainNavBar(keys.length)}>
             <div>
                 {
-                    Object.keys(roleButtonsMapping[auth.user.role]).map(key => {
+                    keys.map(key => {
                         return (
                             <Link to={"/" + auth.user.role + "/" + key} className="l">
                                 <NavBarButton name={roleButtonsMapping[auth.user.role][key]}/>
