@@ -1,9 +1,17 @@
 import React from 'react'
 
-import Catalogue from "./Catalogue";
-import { GridColDef, GridValueGetterParams} from '@mui/x-data-grid';
+import { GridColDef } from '@mui/x-data-grid';
 import Button from "@mui/material/Button";
+import {css} from '@emotion/css'
 
+import Catalogue from "./General/Catalogue";
+import {innerTitle, centeredElement} from "../GlobalCSS"
+
+const tagsCatalogue = css`
+  ${centeredElement}; 
+  width: 60vw;
+  height: 80vh;
+`
 
 export default function TagsCatalogue(){
     const columns: GridColDef[] = [
@@ -20,9 +28,9 @@ export default function TagsCatalogue(){
         { id: 7, name: 'Sales Opportunity', category: 'Sales' },
     ];
     return (
-        <div className="InnerElement">
-            <div className="UsersCatalogue CenteredElement">
-                <h1 className="innerTitle"> Tag Configuration </h1>
+        <div>
+            <div className={tagsCatalogue}>
+                <h1 className={innerTitle}> Tag Configuration </h1>
                 <Catalogue
                     width="80%"
                     columns={columns}

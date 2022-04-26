@@ -1,135 +1,14 @@
-.App{
-    display: flex;
-    flex-flow: row wrap;
-    background-color: #EDEDED;
-}
-
-.komorebiHeader{
-    width: 100vw;
-    height: 8vh;
-    background-color: #2b3340;
-    color: white;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-content: center;
-    box-sizing: border-box;
-    padding: 0 7vw;
-    max-height: 8vh;
-}
-
-.komorebiLabel{
-    font-size: calc(15px + 0.5vw);
-    font-weight: bold;
-}
-
-.NavBarAvatarContainer {
-    display: flex;
-    flex-flow: row nowrap;
-    height: 100%;
-}
-
-.NavBarAvatarContainer > .MuiAvatar-root{
-    height: 5vh;
-    width: 5vh;
-}
-
-.NavBarAvatarData {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.NavBarAvatarData > span{
-    margin: 0.1vw 0.6vw;
-}
-
-.boldText{
-    font-size: calc(13px + 0.3vw);
-    font-weight: bold;
-}
-
-.lightText{
-    font-weight: lighter;
-}
-
-.mainNavbar{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    background-color: #2b3340;
-    width: 5vw;
-    height:92vh;
-    max-height: 92vh;
-    color: white;
-}
-
-.mainNavbar > div:first-child{
-    /*border: solid red 1px;*/
-    height: 70vh;
-    max-height: 70vh;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-}
-
-.mainNavbar > div:last-child{
-    /*border: solid blue 1px;*/
-    height: 10vh;
-    max-height: 10vh;
-}
-
-.navBarButton{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    /*border: solid black 1px;*/
-}
-
-.InnerElement{
-    width: 95vw;
-    height: 92vh;
-    display: flex;
-    flex-flow: column nowrap;
-    align-content: center;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.CenteredElement {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.SearchRecording{
-    width: 60vw;
-    height: 80vh;
-}
-
-.UsersCatalogue{
-    width: 60vw;
-    height: 80vh;
-}
 
 
-.innerTitle{
-    text-align: center;
-    margin: 3vw;
-}
 
-.SearchResultContainer {
-    width: 80%;
-    margin: auto;
-}
 
-.SearchResult{
-    display: flex;
-    flex-flow: row wrap;
-}
 
-.SearchResult > div {
-    margin-left: 2vw;
-}
+
+
+
+
+
+
+
+
+

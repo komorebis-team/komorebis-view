@@ -3,28 +3,47 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import './index.css';
-import App from './App';
-import SearchRecording from './components/SearchRecording.jsx'
+
+import App from './components/App';
+import Login from './components/Login'
+import SearchRecording from './components/Search/SearchRecording.jsx'
 import UsersCatalogue from "./components/UsersCatalogue.jsx";
 import TagsCatalogue from "./components/TagsCatalogue.jsx";
 import reportWebVitals from './reportWebVitals';
+import {AuthProvider} from "./components/Auth/AuthProvider";
+import RequireAuth from "./components/Auth/RequireAuth";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
       <BrowserRouter>
-          <Routes>
-              <Route path="/admin" element={<App/>}>
-                  <Route path="search" element={<SearchRecording/>}/>
-                  <Route path="record" element={<App/>}/>
-                  <Route path="users" element={<UsersCatalogue />}/>
-                  <Route path="tags" element={<TagsCatalogue />}/>
-                  <Route path="statistics" element={<App/>}/>
-                  <Route path="settings" element={<App/>}/>
-              </Route>
-              <Route path="*" element={() => <div> Nothing here :( </div>}/>
-          </Routes>
+          <AuthProvider>
+              <Routes>
+                  <Route path="/login" element={<Login/>}/>
+                  <Route path="/admin" element={
+                      <RequireAuth role="admin">
+                          <App/>
+                      </RequireAuth>
+                  }>
+                      <Route path="search" element={<SearchRecording/>}/>
+                      <Route path="record" element={<App/>}/>
+                      <Route path="users" element={<UsersCatalogue />}/>
+                      <Route path="tags" element={<TagsCatalogue />}/>
+                      <Route path="statistics" element={<App/>}/>
+                      <Route path="settings" element={<App/>}/>
+                  </Route>
+                  <Route path="/agent" element = {
+                      <RequireAuth role="agent">
+                          <App/>
+                      </RequireAuth>
+                  }>
+                      <Route path="search" element={<SearchRecording/>}/>
+                      <Route path="record" element={<App/>}/>
+                  </Route>
+                  <Route path="*" element={() => <div> Nothing here :( </div>}/>
+              </Routes>
+          </AuthProvider>
       </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,10 +1,10 @@
 import React from 'react'
 
 import {Grid} from "@mui/material";
-import css from '@emotion/css';
+import { css } from '@emotion/css';
 
 import SearchResult from "./SearchResult";
-import DropDown from "./DropDown";
+import DropDown from "../General/DropDown";
 
 const searchResults = css`
     margin-top: 2vw;

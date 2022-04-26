@@ -3,7 +3,7 @@ import React from 'react'
 import {Grid, FormControl} from "@mui/material";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import DropDown from './DropDown'
+import DropDown from '../General/DropDown'
 
 export default function SearchBar(){
     return (
