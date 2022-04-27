@@ -19,6 +19,7 @@ export default function SearchRecording(){
                 <h1 className={innerTitle}> Search </h1>
                 <SearchBar/>
                 <SearchResults/>
+               
             </div>
         </div>
     )
