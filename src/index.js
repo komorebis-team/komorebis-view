@@ -12,7 +12,7 @@ import TagsCatalogue from "./components/TagsCatalogue.jsx";
 import reportWebVitals from './reportWebVitals';
 import {AuthProvider} from "./components/Auth/AuthProvider";
 import RequireAuth from "./components/Auth/RequireAuth";
-import SupervisorInfo from "./components/SupervisorInfo";
+import SupervisorInfo from "./components/SupervisorDetails/SupervisorInfo";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

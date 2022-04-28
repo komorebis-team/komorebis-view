@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
-import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
+import React, { useState } from 'react'
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
-export default function DropDown2(props){
+export default function DropDown2(props) {
     const [value, setValue] = useState("Active")
     const handleChange = (newValue) => setValue(newValue)
     const labelId = "label-" + props.label.replace(" ", "-").toLowerCase()
@@ -19,7 +19,7 @@ export default function DropDown2(props){
 
             >
                 {
-                    props.values.map( value => {
+                    props.values.map(value => {
                         return <MenuItem value={value}> {value} </MenuItem>
                     })
                 }

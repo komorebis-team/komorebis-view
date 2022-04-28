@@ -7,29 +7,29 @@ import SupervisorPersonalInfo from './SupervisorPersonalInfo.jsx';
 import SupervisorAgents from "./SupervisorAgents.jsx";
 
 export default function SupervisorInfo() {
-    return(
+    return (
         <div>
             <h1>Supervisor Information</h1>
-        <Grid alignItems="stretch" container spacing={3} padding={5} pt={0}>
+            <Grid alignItems="stretch" container spacing={3} padding={5} pt={0}>
                 <Grid item md={5} xs={12}>
                     <Paper elevation={3}>
-                    <SupervisorPersonalInfo/>
-                   
+                        <SupervisorPersonalInfo />
+
 
                     </Paper>
                 </Grid>
                 <Grid item md={7} xs={12}>
                     <Paper elevation={3}>
-                    <SupervisorAgents/>                        
+                        <SupervisorAgents />
                     </Paper>
                 </Grid>
-                </Grid>
+            </Grid>
 
 
- 
-</div>
-                
-         
+
+        </div>
+
+
     )
 }
 
