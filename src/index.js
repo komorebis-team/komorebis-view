@@ -12,6 +12,7 @@ import TagsCatalogue from "./components/TagsCatalogue.jsx";
 import reportWebVitals from './reportWebVitals';
 import {AuthProvider} from "./components/Auth/AuthProvider";
 import RequireAuth from "./components/Auth/RequireAuth";
+import Record from "./components/Record";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -38,7 +39,7 @@ root.render(
                       </RequireAuth>
                   }>
                       <Route path="search" element={<SearchRecording/>}/>
-                      <Route path="record" element={<App/>}/>
+                      <Route path="record" element={<Record/>}/>
                   </Route>
                   <Route path="*" element={() => <div> Nothing here :( </div>}/>
               </Routes>
