@@ -14,11 +14,11 @@ const tagsCatalogue = css`
 `
 
 export default function TagsCatalogue(){
-    const columns: GridColDef[] = [
+    let columns = [
         { field: 'name', headerName: 'Name', flex: 1, type: 'string' },
         { field: 'category', headerName: 'Category', flex: 1, type: 'string' },
     ];
-    const  rows = [
+    let  rows = [
         { id: 1, name: 'Model A', category: 'Sales' },
         { id: 2, name: 'Model B', category: 'Sales'},
         { id: 3, name: 'Hang-Up Call', category: 'General' },
@@ -39,5 +39,5 @@ export default function TagsCatalogue(){
                 <Button variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
             </div>
         </div>
-    )
+    );
 }

@@ -15,7 +15,7 @@ const usersCatalogue = css`
 
 `
 
-const columns: GridColDef[] = [
+const columns = [
     { field: 'id', headerName: 'ID', flex: 0.5, type: 'number' },
     { field: 'name', headerName: 'Name', flex: 1, type: 'string' },
     { field: 'status', headerName: 'Status', flex: 1, type: 'string' },

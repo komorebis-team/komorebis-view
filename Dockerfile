@@ -14,6 +14,4 @@ COPY ./public ./public
 
 RUN npm run build
 
-EXPOSE "3000"
-
-CMD ["serve", "-s", "build"]
+ENTRYPOINT ["serve", "-s", "-d", "-u", "build"]
