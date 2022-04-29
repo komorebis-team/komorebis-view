@@ -5,9 +5,11 @@ import {Button, Stack, Typography} from "@mui/material";
 import {useReactMediaRecorder} from "react-media-recorder";
 import {css} from "@emotion/css";
 
+import {fullHeightChild} from '../GlobalCSS'
 
 let recorderStyle = css`
-    border: solid black 1px; 
+  ${fullHeightChild}; 
+  border: solid black 1px; 
 `
 
 const Recorder = ({

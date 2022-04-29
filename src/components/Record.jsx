@@ -6,20 +6,22 @@ import Grid from "@mui/material/Grid";
 import {Button, Stack} from "@mui/material";
 
 import Recorder from './Recorder'
-
+import {fullHeightChild} from '../GlobalCSS'
 
 let recordContainer = css`
   ${centeredElement};
-  width: 40vw;
-  height: 80vw;
+  margin-top: 5vh; 
+  width: 80vw;
+  height: 80vh;
   
-  & * {
+  & > div {
     border: solid black 1px;
   }
 `
 
 let ccpStyle = css`
-    border: solid black 1px; 
+  ${fullHeightChild}; 
+  border: solid black 1px; 
 `
 
 export default function Record(){
@@ -64,15 +66,17 @@ export default function Record(){
         }
     })
     return (
-        <div className={recordContainer}>
-            <Grid container direction="row">
-                <Grid item xs={6}>
-                    <div id="connectCCP" className={ccpStyle}> </div>
+        <div>
+            <div className={recordContainer}>
+                <Grid container direction="row" className={fullHeightChild}>
+                    <Grid item xs={9} className={fullHeightChild}>
+                        <div id="connectCCP" className={ccpStyle}> </div>
+                    </Grid>
+                    <Grid item xs={3} className={fullHeightChild}>
+                        <Recorder/>
+                    </Grid>
                 </Grid>
-                <Grid item xs={6}>
-                    <Recorder/>
-                </Grid>
-            </Grid>
+            </div>
         </div>
     )
 }
