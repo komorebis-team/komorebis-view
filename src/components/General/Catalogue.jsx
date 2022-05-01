@@ -10,8 +10,9 @@ export default function Catalogue(props){
                 columns={props.columns}
                 pageSize={5}
                 rowsPerPageOptions={[5]}
-                checkboxSelection
+
             />
         </div>
     )
 }
+{/*checkboxSelection*/}

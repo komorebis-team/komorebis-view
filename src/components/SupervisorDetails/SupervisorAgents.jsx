@@ -1,11 +1,8 @@
 import React from "react";
-import Grid from '@mui/material/Grid'
-import Box from '@mui/material/Box';
+
 import Catalogue from "../General/Catalogue";
-import { GridColDef } from '@mui/x-data-grid';
 import { css } from '@emotion/css'
 import { innerTitle, centeredElement } from "../../GlobalCSS"
-import Button from "@mui/material/Button";
 import { Link } from '@mui/material';
 
 const tagsCatalogue = css`
@@ -18,18 +15,20 @@ const tagsCatalogue = css`
 export default function SupervisorAgents() {
 
     const columns = [
-        { field: 'id', headerName: 'ID', render: rowData => <div>{console.log("hola")}</div> },
+        { field: 'id', headerName: 'ID',  flex:2, renderCell: (params) => (
+                <Link to="">{params.value}</Link>
+            ) },
         { field: 'name', headerName: 'Name', flex: 3, type: 'string' },
-        
+
     ]
     const rows = [
-        { id: '123', name: 'Selena Quintanilla' },
-        { id: '344', name: 'Selena Quintanilla' },
-        { id: '127643', name: 'Selena Quintanilla' },
-        { id: '3577', name: 'Selena Quintanilla' },
-        { id: '732', name: 'Selena Quintanilla' },
-        { id: '64', name: 'Selena Quintanilla' },
-        { id: '677', name: 'Selena Quintanilla' },
+        { id: '2001', name: 'Selena Quintanilla' },
+        { id: '2002', name: 'Fe Ismael' },
+        { id: '2003', name: 'Albino Abril' },
+        { id: '2004', name: 'Marina Jimena' },
+        { id: '2005', name: 'Martirio Nayeli' },
+        { id: '2006', name: 'Dolores Nydia' },
+        { id: '2007', name: 'Jeremías Ana Ruy' },
     ];
     return (
         <div>
