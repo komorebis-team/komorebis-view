@@ -68,13 +68,13 @@ export default function SupervisorPersonalInfo() {
 
             <Grid container spacing={1} alignItems="center" justifyContent="center" mt={0.5}>
 
-                <Grid item xs={4} mb={2} >
+                <Grid item xs={4} mb={3} >
 
                     <Button size="medium" variant="contained" color="success" startIcon={<SaveIcon />}>
                         Save
                     </Button>
                 </Grid>
-                <Grid item xs={4} mb={2} >
+                <Grid item xs={4} mb={3} >
                     <Button size="medium" variant="contained" color="error" startIcon={<DeleteIcon />}>
                         Delete
                     </Button>

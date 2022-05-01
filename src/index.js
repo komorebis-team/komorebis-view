@@ -16,6 +16,7 @@ import {AuthProvider} from "./components/Auth/AuthProvider";
 import RequireAuth from "./components/Auth/RequireAuth";
 import Record from "./components/Record";
 import SupervisorInfo from "./components/SupervisorDetails/SupervisorInfo";
+import Statistics from "./components/Statistics";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -23,6 +24,7 @@ root.render(
   <React.StrictMode>
       <BrowserRouter>
           <AuthProvider>
+
               <Routes>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/admin" element={
@@ -31,9 +33,11 @@ root.render(
                       </RequireAuth>
                   }>
                       <Route path="search" element={<SearchRecording/>}/>
+
                       <Route path="users" element={<UsersCatalogue />}/>
+                      <Route path="users/supervisorInfo" element={<SupervisorInfo/>}/>
                       <Route path="tags" element={<TagsCatalogue />}/>
-                      <Route path="statistics" element={<SupervisorInfo/>}/>
+                      <Route path="statistics" element={<Statistics/>}/>
                       <Route path="settings" element={<App/>}/>
                   </Route>
                   <Route path="/agent" element = {
@@ -46,6 +50,7 @@ root.render(
                   </Route>
                   <Route path="*" element={() => <div> Nothing here :( </div>}/>
               </Routes>
+
           </AuthProvider>
       </BrowserRouter>
   </React.StrictMode>
