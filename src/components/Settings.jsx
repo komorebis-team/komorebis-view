@@ -65,7 +65,7 @@ export default function Settings(){
               label="Minimum"
               suffix= "min"
               variant="filled"
-              value={0}
+              defaultValue={0}
           />
           </Grid>
             
@@ -75,7 +75,7 @@ export default function Settings(){
               label="Maximum"
               suffix= "min"
               variant="filled"
-              value={0}
+              defaultValue={0}
           />
           </Grid>
           
