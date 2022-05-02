@@ -15,6 +15,9 @@ export const centeredElement = css`
   align-items: center;
 `
 export const theme = createTheme({
+  shape: {
+    borderRadius: 30,
+  }, 
  
   palette: {
     primary: {
