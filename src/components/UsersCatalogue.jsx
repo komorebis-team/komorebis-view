@@ -5,7 +5,7 @@ import {GridColDef} from '@mui/x-data-grid';
 import Button from "@mui/material/Button";
 
 import Catalogue from "./General/Catalogue";
-import {innerTitle, centeredElement} from "../GlobalCSS"
+import {innerTitle, centeredElement,theme} from "../GlobalCSS"
 
 
 const usersCatalogue = css`
@@ -43,7 +43,7 @@ export default function UsersCatalogue(){
                     columns={columns}
                     rows={rows}
                 />
-                <Button variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+                <Button theme={theme} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
             </div>
         </div>
     )
