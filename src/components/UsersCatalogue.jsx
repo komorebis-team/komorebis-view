@@ -4,11 +4,15 @@ import {css} from '@emotion/css'
 import Button from "@mui/material/Button";
 
 import Catalogue from "./General/Catalogue";
-import {innerTitle, centeredElement} from "../GlobalCSS"
+
+import {innerTitle, centeredElement,theme} from "../GlobalCSS"
+
+
 import {Outlet} from "react-router-dom";
 import {Link} from "react-router-dom";
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+
 
 const usersCatalogue = css`
   ${centeredElement}; 
@@ -49,7 +53,9 @@ export default function UsersCatalogue(){
                     columns={columns}
                     rows={rows}
                 />
-                <Button variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw', marginBottom:'3vw'}}> + ADD </Button>
+
+                <Button theme={theme} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+
             </div>
             <Outlet/>
                 </Paper>

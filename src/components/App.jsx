@@ -13,7 +13,7 @@ const appStyle = css`
 
 const contentContainer = css`
   & > div {
-    width: 95vw;
+    width: 93vw;
     height: 92vh;
     display: flex;
     flex-flow: column nowrap;

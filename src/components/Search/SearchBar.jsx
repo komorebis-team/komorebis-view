@@ -4,7 +4,7 @@ import {Grid, FormControl} from "@mui/material";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import DropDown from '../General/DropDown'
-
+import { theme } from '../../GlobalCSS';
 export default function SearchBar(){
     return (
         <div>
@@ -33,7 +33,7 @@ export default function SearchBar(){
                     <Grid item xs={0.5}> </Grid>
                     <Grid item xs={2}>
                         <FormControl fullWidth>
-                            <Button variant="contained" fullWidth> Buscar </Button>
+                            <Button theme={theme} variant="contained" fullWidth> Buscar </Button>
                         </FormControl>
                     </Grid>
                 </Grid>

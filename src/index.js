@@ -14,9 +14,12 @@ import TagsCatalogue from "./components/TagsCatalogue.jsx";
 import reportWebVitals from './reportWebVitals';
 import {AuthProvider} from "./components/Auth/AuthProvider";
 import RequireAuth from "./components/Auth/RequireAuth";
+
+import Settings from './components/Settings';
 import Record from "./components/Record";
 import SupervisorInfo from "./components/SupervisorDetails/SupervisorInfo";
 import Statistics from "./components/Statistics";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -37,8 +40,10 @@ root.render(
                       <Route path="users" element={<UsersCatalogue />}/>
                       <Route path="users/supervisorInfo" element={<SupervisorInfo/>}/>
                       <Route path="tags" element={<TagsCatalogue />}/>
-                      <Route path="statistics" element={<Statistics/>}/>
-                      <Route path="settings" element={<App/>}/>
+
+                      <Route path="statistics" element={<App/>}/>
+                      <Route path="settings" element={<Settings/>}/>
+
                   </Route>
                   <Route path="/agent" element = {
                       <RequireAuth role="agent">
