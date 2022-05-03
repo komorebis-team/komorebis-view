@@ -3,9 +3,7 @@ import "amazon-connect-streams";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-
 import './index.css';
-
 import App from './components/App';
 import Login from './components/Login'
 import SearchRecording from './components/Search/SearchRecording.jsx'
@@ -19,7 +17,6 @@ import Settings from './components/Settings';
 import Record from "./components/Record";
 import SupervisorInfo from "./components/SupervisorDetails/SupervisorInfo";
 import Statistics from "./components/Statistics";
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -41,7 +38,7 @@ root.render(
                       <Route path="users/supervisorInfo" element={<SupervisorInfo/>}/>
                       <Route path="tags" element={<TagsCatalogue />}/>
 
-                      <Route path="statistics" element={<App/>}/>
+                      <Route path="statistics" element={<Statistics/>}/>
                       <Route path="settings" element={<Settings/>}/>
 
                   </Route>

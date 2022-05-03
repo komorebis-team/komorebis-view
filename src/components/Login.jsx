@@ -1,20 +1,18 @@
 import React, {useState} from 'react'
-
 import {css} from '@emotion/css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import { Navigate } from "react-router-dom";
-
 import {useAuth} from "./Auth/AuthProvider";
+import komorebiLogo from './Assets/Komorebi2.png';
 
 const loginBackground = css`
   width: 100vw; 
   height: 100vh;
   display: flex; 
   flex-flow: row nowrap;
-  align-items: center; 
-  
+  align-items: center;
   box-sizing: border-box;
   padding: 2vw;
   
@@ -81,7 +79,8 @@ export default function Login() {
 
     return (
         <div className={loginBackground}>
-            <img src="https://via.placeholder.com/900x650.png" className={loginImage}/>
+            <img src= {komorebiLogo} className={loginImage} alt="Logo komorebi"/>
+
             <div className={formContainer}>
                 <form onSubmit={e => handleSubmit(auth, e)}>
                     <Grid container direction="vertical" rowSpacing={4}>
@@ -105,14 +104,16 @@ export default function Login() {
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <TextField
+                             <TextField
                                 id="password"
                                 label="Password"
                                 variant="outlined"
+                                type="password"
                                 required
                                 fullWidth
                                 onChange={(e) => setPassword(e.target.value)}
                             />
+
                         </Grid>
                         <Grid item xs={4}/>
                         <Grid item xs={4}>
@@ -123,6 +124,7 @@ export default function Login() {
                     </Grid>
                 </form>
             </div>
+
         </div>
     );
 }
