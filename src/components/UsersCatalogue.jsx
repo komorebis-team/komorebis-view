@@ -1,8 +1,8 @@
 import React from 'react'
-
+import { useState } from 'react';
 import {css} from '@emotion/css'
 import Button from "@mui/material/Button";
-
+import {Navigate} from "react-router-dom";
 import Catalogue from "./General/Catalogue";
 
 import {innerTitle, centeredElement,theme} from "../GlobalCSS"
@@ -42,8 +42,17 @@ const  rows = [
 ];
 
 export default function UsersCatalogue(){
-    return (
-        <div>
+
+    let [redirectState,setRedirectState] = useState(false);
+    const toggle = () => setRedirectState(!redirectState);
+
+    if( redirectState === true){
+        return <Navigate to="/admin/adduser"/>;
+    }
+    else
+    {
+        return (
+            <div>
             <Grid item mt={4} >
                 <Paper elevation={3}>
             <div className={[usersCatalogue]}>
@@ -54,12 +63,14 @@ export default function UsersCatalogue(){
                     rows={rows}
                 />
 
-                <Button theme={theme} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+                <Button theme={theme} onClick={toggle} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
 
             </div>
             <Outlet/>
                 </Paper>
             </Grid>
         </div>
-    )
+        )
+    }
+
 }
