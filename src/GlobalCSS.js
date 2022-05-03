@@ -14,6 +14,7 @@ export const centeredElement = css`
   flex-flow: column nowrap;
   align-items: center;
 `
+
 export const theme = createTheme({
   shape: {
     borderRadius: 30,
@@ -28,3 +29,8 @@ export const theme = createTheme({
 
   },
 });
+
+export let fullHeightChild = css`
+    height: 100%; 
+    min-height: 100%;
+`

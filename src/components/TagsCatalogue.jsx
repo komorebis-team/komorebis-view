@@ -1,11 +1,15 @@
 import React from 'react'
 
-import { GridColDef } from '@mui/x-data-grid';
 import Button from "@mui/material/Button";
 import {css} from '@emotion/css'
 
 import Catalogue from "./General/Catalogue";
+
 import {innerTitle, centeredElement,theme} from "../GlobalCSS"
+
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
 
 const tagsCatalogue = css`
   ${centeredElement}; 
@@ -14,11 +18,11 @@ const tagsCatalogue = css`
 `
 
 export default function TagsCatalogue(){
-    const columns: GridColDef[] = [
+    let columns = [
         { field: 'name', headerName: 'Name', flex: 1, type: 'string' },
         { field: 'category', headerName: 'Category', flex: 1, type: 'string' },
     ];
-    const  rows = [
+    let  rows = [
         { id: 1, name: 'Model A', category: 'Sales' },
         { id: 2, name: 'Model B', category: 'Sales'},
         { id: 3, name: 'Hang-Up Call', category: 'General' },
@@ -29,6 +33,8 @@ export default function TagsCatalogue(){
     ];
     return (
         <div>
+            <Grid item mt={4} >
+            <Paper elevation={3}>
             <div className={tagsCatalogue}>
                 <h1 className={innerTitle}> Tag Configuration </h1>
                 <Catalogue
@@ -36,8 +42,12 @@ export default function TagsCatalogue(){
                     columns={columns}
                     rows={rows}
                 />
+
                 <Button theme={theme} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+
             </div>
+            </Paper>
+            </Grid>
         </div>
-    )
+    );
 }

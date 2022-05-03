@@ -1,11 +1,17 @@
 import React from 'react'
 
 import {css} from '@emotion/css'
-import {GridColDef} from '@mui/x-data-grid';
 import Button from "@mui/material/Button";
 
 import Catalogue from "./General/Catalogue";
+
 import {innerTitle, centeredElement,theme} from "../GlobalCSS"
+
+
+import {Outlet} from "react-router-dom";
+import {Link} from "react-router-dom";
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 
 
 const usersCatalogue = css`
@@ -15,8 +21,10 @@ const usersCatalogue = css`
 
 `
 
-const columns: GridColDef[] = [
-    { field: 'id', headerName: 'ID', flex: 0.5, type: 'number' },
+const columns = [
+    { field: 'id', headerName: 'ID', flex: 0.5, type: 'number', renderCell: (params) => (
+            <Link to="supervisorInfo">{params.value}</Link>
+        ) },
     { field: 'name', headerName: 'Name', flex: 1, type: 'string' },
     { field: 'status', headerName: 'Status', flex: 1, type: 'string' },
     { field: 'role', headerName: 'Role', flex: 1, type: 'string'},
@@ -36,6 +44,8 @@ const  rows = [
 export default function UsersCatalogue(){
     return (
         <div>
+            <Grid item mt={4} >
+                <Paper elevation={3}>
             <div className={[usersCatalogue]}>
                 <h1 className={innerTitle}> User Administration </h1>
                 <Catalogue
@@ -43,8 +53,13 @@ export default function UsersCatalogue(){
                     columns={columns}
                     rows={rows}
                 />
+
                 <Button theme={theme} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+
             </div>
+            <Outlet/>
+                </Paper>
+            </Grid>
         </div>
     )
 }

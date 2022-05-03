@@ -1,10 +1,9 @@
 import React from 'react'
 import { css } from '@emotion/css'
 
-import NavBarButton from "./NavBar/NavBarButton";
 import NavBar from "./NavBar/NavBar";
 import Header from './General/Header.jsx';
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const appStyle = css`
     display: flex;
