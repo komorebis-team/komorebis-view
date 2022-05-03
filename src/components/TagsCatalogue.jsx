@@ -43,7 +43,7 @@ export default function TagsCatalogue(){
                     rows={rows}
                 />
 
-                <Button theme={theme} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+                <Button theme={theme} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '1vw',marginBottom:'2vw'}}> + ADD </Button>
 
             </div>
             </Paper>

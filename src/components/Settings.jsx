@@ -23,8 +23,8 @@ export default function Settings(){
         <div>
             <div className={settings}>
       
-                <h1 className= {innerTitle}>System Configuration</h1>
-                <Box className= {centeredElement} sx={{ width:800,height:500 , boxShadow:3, backgroundColor:"white", padding: "2vw"}}>
+                <h1 className= {centeredElement}>System Configuration</h1>
+                <Box className= {centeredElement} sx={{ width:800,height:450 , boxShadow:3, backgroundColor:"white", padding: "2vw"}}>
                 <FormControl>
                     <h3>Data Compression</h3>
                     <Box className= {centeredElement} sx={{width:400,height:40, boxShadow:0,backgroundColor:"#E8E8E8"}}>
@@ -105,10 +105,10 @@ export default function Settings(){
       </Stack>
                </Box> 
             </FormControl>
-            <br></br>
+            
             
 
-            <Button  theme={theme} mat-button color="primary" variant="contained" startIcon={<SaveIcon />} style={{alignSelf: "flex-end", marginRight: '12vw', marginTop: '1vw'}}>
+            <Button  theme={theme} mat-button color="primary" variant="contained" startIcon={<SaveIcon />} style={{alignSelf: "flex-end", marginRight: '12vw', marginTop: '0.5vw'}}>
   Save 
 </Button>
 

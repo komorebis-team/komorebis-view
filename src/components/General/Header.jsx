@@ -5,7 +5,7 @@ import NavBarAvatar from "../NavBar/NavBarAvatar";
 
 const komorebiHeader = css`
   width: 100vw;
-  height: 8vh;
+  height: 10vh;
   background-color: #2b3340;
   color: white;
   display: flex;
@@ -14,7 +14,7 @@ const komorebiHeader = css`
   align-content: center;
   box-sizing: border-box;
   padding: 0 7vw;
-  max-height: 8vh;
+ 
 `
 
 const komorebiLabel = css`
