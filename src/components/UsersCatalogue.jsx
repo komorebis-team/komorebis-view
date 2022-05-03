@@ -1,9 +1,9 @@
 import React from 'react'
-
+import { useState } from 'react';
 import {css} from '@emotion/css'
 import {GridColDef} from '@mui/x-data-grid';
 import Button from "@mui/material/Button";
-
+import {Navigate} from "react-router-dom";
 import Catalogue from "./General/Catalogue";
 import {innerTitle, centeredElement} from "../GlobalCSS"
 
@@ -34,17 +34,26 @@ const  rows = [
 ];
 
 export default function UsersCatalogue(){
-    return (
-        <div>
-            <div className={[usersCatalogue]}>
-                <h1 className={innerTitle}> User Administration </h1>
-                <Catalogue
-                    width="80%"
-                    columns={columns}
-                    rows={rows}
-                />
-                <Button variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+    let [redirectState,setRedirectState] = useState(false);
+    const toggle = () => setRedirectState(!redirectState);
+
+    if( redirectState === true){
+        return <Navigate to="/admin/adduser"/>;
+    }
+    else
+    {
+        return (
+            <div>
+                <div className={[usersCatalogue]}>
+                    <h1 className={innerTitle}> User Administration </h1>
+                    <Catalogue
+                        width="80%"
+                        columns={columns}
+                        rows={rows}
+                    />
+                    <Button variant="contained" onClick={toggle} style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }

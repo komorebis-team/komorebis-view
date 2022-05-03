@@ -9,6 +9,7 @@ import Login from './components/Login'
 import SearchRecording from './components/Search/SearchRecording.jsx'
 import UsersCatalogue from "./components/UsersCatalogue.jsx";
 import TagsCatalogue from "./components/TagsCatalogue.jsx";
+import { AddUser } from './components/addUser';
 import reportWebVitals from './reportWebVitals';
 import {AuthProvider} from "./components/Auth/AuthProvider";
 import RequireAuth from "./components/Auth/RequireAuth";
@@ -31,6 +32,7 @@ root.render(
                       <Route path="tags" element={<TagsCatalogue />}/>
                       <Route path="statistics" element={<App/>}/>
                       <Route path="settings" element={<App/>}/>
+                      <Route path="adduser" element={<AddUser/>}/>
                   </Route>
                   <Route path="/agent" element = {
                       <RequireAuth role="agent">
