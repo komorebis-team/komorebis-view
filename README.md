@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Para correrlo: 
+se borra la carpeta "node_modules"
+En la terminal se ponen los siguientes comandos: 
+npm install -g webpack-cli webpack-dev-server
+webpack-dev-server --mode development
+Si marca algún error: npm install
+El proyecto se abre en el puerto 8080
