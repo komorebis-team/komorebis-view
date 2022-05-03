@@ -4,9 +4,12 @@ import Button from "@mui/material/Button";
 import {css} from '@emotion/css'
 
 import Catalogue from "./General/Catalogue";
-import {innerTitle, centeredElement} from "../GlobalCSS"
+
+import {innerTitle, centeredElement,theme} from "../GlobalCSS"
+
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+
 
 const tagsCatalogue = css`
   ${centeredElement}; 
@@ -39,7 +42,9 @@ export default function TagsCatalogue(){
                     columns={columns}
                     rows={rows}
                 />
-                <Button variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw', marginBottom:'3vw'}}> + ADD </Button>
+
+                <Button theme={theme} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+
             </div>
             </Paper>
             </Grid>
