@@ -5,7 +5,7 @@ import { centeredElement } from "../GlobalCSS";
 import { innerTitle,theme } from "../GlobalCSS";
 import { orange } from "@mui/material/colors";
 import SaveIcon from '@mui/icons-material/Save';
-
+import { InputAdornment } from "@mui/material";
 
 const settings = css`
 ${centeredElement};
@@ -54,27 +54,37 @@ export default function Settings(){
       </Stack>
                </Box>
             </FormControl>
+            <h3>Video Duration</h3>
             <FormControl>
           
-            <br></br>
-            <h3>Video Duration</h3>
-            <Grid container spacing={2}>
-           <Grid item xs={6}> <TextField
+           
+            <Grid container spacing={8}sx={{paddingLeft:"16vw"}}>
+           <Grid item xs={4} > <TextField
              type="number"
               name="Min"
               label="Minimum"
               suffix= "min"
               variant="filled"
+              InputProps={{
+                endAdornment:
+                <InputAdornment position="end">Min</InputAdornment>
+
+              }}
               defaultValue={0}
           />
           </Grid>
             
-           <Grid item xs={6}> <TextField
+           <Grid item xs={4}> <TextField
              type="number"
               name="Min"
               label="Maximum"
               suffix= "min"
               variant="filled"
+              InputProps={{
+                endAdornment:
+                <InputAdornment position="end">Min</InputAdornment>
+
+              }}
               defaultValue={0}
           />
           </Grid>
