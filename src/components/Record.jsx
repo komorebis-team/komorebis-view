@@ -25,19 +25,13 @@ let ccpStyle = css`
 `
 
 export default function Record(){
-
-    console.log(connect)
-
     useEffect(() => {
         let containerDiv = document.getElementById("connectCCP");
         let instanceURL = "https://komorebi-connect.my.connect.aws/ccp-v2/";
 
         try {
-            console.log(connect)
-            console.log(connect.core)
-            console.log(connect.core.initCCP)
             connect.agentApp.initCCP(containerDiv, {
-                ccpUrl: instanceURL,            // REQUIRED
+                ccpUrl: instanceURL,
                 loginPopup: true,               // optional, defaults to `true`
                 loginPopupAutoClose: true,      // optional, defaults to `false`
                 loginOptions: {                 // optional, if provided opens login in new window
@@ -56,7 +50,7 @@ export default function Record(){
                     enableAudioDeviceSettings: false, //optional, defaults to 'false'
                     enablePhoneTypeSettings: true //optional, defaults to 'true'
                 },
-                ccpAckTimeout: 5000, //optional, defaults to 3000 (ms)
+                ccpAckTimeout: 10000, //optional, defaults to 3000 (ms)
                 ccpSynTimeout: 3000, //optional, defaults to 1000 (ms)
                 ccpLoadTimeout: 10000 //optional, defaults to 5000 (ms)
 

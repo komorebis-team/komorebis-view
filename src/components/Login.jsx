@@ -62,6 +62,7 @@ function redirectUser(user){
 
 
 export default function Login() {
+    console.log("In Login component")
     let auth = useAuth();
     let [username, setUsername] = useState("")
     let [password, setPassword] = useState("")
