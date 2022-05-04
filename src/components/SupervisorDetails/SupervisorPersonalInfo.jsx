@@ -9,7 +9,8 @@ import { Avatar, Menu, MenuItem } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 import SaveIcon from '@mui/icons-material/Save';
-
+import { circle } from "../../GlobalCSS";
+import placeholder from "../Assets/placeholder.jpg";
 export default function SupervisorPersonalInfo() {
     return (
         <div>
@@ -23,7 +24,7 @@ export default function SupervisorPersonalInfo() {
             >
                 <Grid item xs={12} >
 
-                    <Avatar src="https://via.placeholder.com/200" sx={{ width: 120, height: 120 }} />
+                    <Avatar src={placeholder} sx={{ width: 120, height: 120 }} />
                 </Grid>
 
             </Grid>
@@ -70,12 +71,12 @@ export default function SupervisorPersonalInfo() {
 
                 <Grid item xs={4} mb={3} >
 
-                    <Button size="medium" variant="contained" color="success" startIcon={<SaveIcon />}>
+                    <Button theme={circle} size="medium" variant="contained" color="success" startIcon={<SaveIcon />}>
                         Save
                     </Button>
                 </Grid>
                 <Grid item xs={4} mb={3} >
-                    <Button size="medium" variant="contained" color="error" startIcon={<DeleteIcon />}>
+                    <Button theme={circle} size="medium" variant="contained" color="error" startIcon={<DeleteIcon />}>
                         Delete
                     </Button>
                 </Grid>

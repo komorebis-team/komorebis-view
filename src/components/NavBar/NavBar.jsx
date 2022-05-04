@@ -12,8 +12,8 @@ const mainNavBar = (numOptions) => css`
   justify-content: space-between;
   background-color: #2b3340;
   width: 5vw;
-  height:92vh;
-  max-height: 92vh;
+  height:95vh;
+
   color: white;
   
   & .l{
@@ -66,7 +66,7 @@ export default function NavBar(){
                 }
             </div>
             <div>
-                <NavBarButton name="Help"/>
+                <NavBarButton name="Help"className="l"/>
             </div>
         </nav>
     );

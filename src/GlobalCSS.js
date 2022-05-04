@@ -15,7 +15,7 @@ export const centeredElement = css`
   align-items: center;
 `
 
-export const theme = createTheme({
+export const orangeButton = createTheme({
   shape: {
     borderRadius: 30,
   }, 
@@ -28,6 +28,12 @@ export const theme = createTheme({
     },
 
   },
+});
+
+export const circle = createTheme({
+  shape:{
+    borderRadius:30,
+  }
 });
 
 export let fullHeightChild = css`

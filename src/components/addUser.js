@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { Button } from '@mui/material';
 import { Navigate } from 'react-router-dom';
-import { theme } from '../GlobalCSS';
+import { orangeButton } from '../GlobalCSS';
 
 
 
@@ -132,7 +132,7 @@ export const AddUser = () => {
           defaultValue="diego.urgell@aws.com"
           style={{position:'relative','left':'22%', padding:"2%",width: '45%'}}
         />
-        <Button theme={theme} onClick={navigate} style={{position:'relative','right':'50px','top':'78px'}} variant="contained">Submit</Button>
+        <Button theme={orangeButton} onClick={navigate} style={{position:'relative','right':'50px','top':'78px'}} variant="contained">Submit</Button>
 
         </div>
     </Box>

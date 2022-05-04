@@ -2,7 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import { Button, Switch,Box,Radio,FormControlLabel,FormControl,RadioGroup,Stack,Typography,TextField, Grid} from "@mui/material";
 import { centeredElement } from "../GlobalCSS";
-import { innerTitle,theme } from "../GlobalCSS";
+import { innerTitle,orangeButton } from "../GlobalCSS";
 import { orange } from "@mui/material/colors";
 import SaveIcon from '@mui/icons-material/Save';
 import { InputAdornment } from "@mui/material";
@@ -108,7 +108,7 @@ export default function Settings(){
             
             
 
-            <Button  theme={theme} mat-button color="primary" variant="contained" startIcon={<SaveIcon />} style={{alignSelf: "flex-end", marginRight: '12vw', marginTop: '0.5vw'}}>
+            <Button  theme={orangeButton} mat-button color="primary" variant="contained" startIcon={<SaveIcon />} style={{alignSelf: "flex-end", marginRight: '12vw', marginTop: '0.5vw'}}>
   Save 
 </Button>
 

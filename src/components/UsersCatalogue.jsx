@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import {Navigate} from "react-router-dom";
 import Catalogue from "./General/Catalogue";
 
-import {innerTitle, centeredElement,theme} from "../GlobalCSS"
+import {innerTitle, centeredElement,orangeButton} from "../GlobalCSS"
 
 
 import {Outlet} from "react-router-dom";
@@ -63,7 +63,7 @@ export default function UsersCatalogue(){
                     rows={rows}
                 />
 
-                <Button theme={theme} onClick={toggle} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '1vw',marginBottom:'2vw'}}> + ADD </Button>
+                <Button theme={orangeButton} onClick={toggle} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '1vw',marginBottom:'2vw'}}> + ADD </Button>
 
             </div>
             <Outlet/>

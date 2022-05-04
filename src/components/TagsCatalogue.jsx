@@ -5,7 +5,7 @@ import {css} from '@emotion/css'
 
 import Catalogue from "./General/Catalogue";
 
-import {innerTitle, centeredElement,theme} from "../GlobalCSS"
+import {innerTitle, centeredElement,orangeButton} from "../GlobalCSS"
 
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -43,7 +43,7 @@ export default function TagsCatalogue(){
                     rows={rows}
                 />
 
-                <Button theme={theme} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '1vw',marginBottom:'2vw'}}> + ADD </Button>
+                <Button theme={orangeButton} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '1vw',marginBottom:'2vw'}}> + ADD </Button>
 
             </div>
             </Paper>
