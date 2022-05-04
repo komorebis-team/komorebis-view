@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import { Button } from '@mui/material';
 import { Navigate } from 'react-router-dom';
+import { theme } from '../GlobalCSS';
 
 
 
@@ -111,12 +112,12 @@ export const AddUser = () => {
         </TextField>
         <TextField
           id="outlined-select-currency"
-          select
+          type="select"
           label="Select"
           value={supervisor}
           onChange={handleChange}
           helperText="Please select the user"
-          style={{padding:"2%",width: '45%'}}
+          style={{paddingTop:"2%",width: '45%'}}
         >
           {supervisors.map((option) => (
             <MenuItem key={option.value} value={option.value}>
@@ -131,7 +132,7 @@ export const AddUser = () => {
           defaultValue="diego.urgell@aws.com"
           style={{position:'relative','left':'22%', padding:"2%",width: '45%'}}
         />
-        <Button onClick={navigate} style={{position:'relative','right':'50px','top':'90px'}} variant="contained">Submit</Button>
+        <Button theme={theme} onClick={navigate} style={{position:'relative','right':'50px','top':'78px'}} variant="contained">Submit</Button>
 
         </div>
     </Box>

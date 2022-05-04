@@ -6,7 +6,8 @@ import Grid from '@mui/material/Grid';
 import { Navigate } from "react-router-dom";
 import {useAuth} from "./Auth/AuthProvider";
 import komorebiLogo from './Assets/Komorebi2.png';
-
+import loginLogo from './Assets/Klogin.png';
+import { style, width } from '@mui/system';
 const loginBackground = css`
   width: 100vw; 
   height: 100vh;
@@ -22,6 +23,14 @@ const loginBackground = css`
 const loginImage = css`
   object-fit: contain;
   max-width: 50vw;
+
+`
+const komologo = css
+`
+  object-fit: contain;
+  max-width: 85px;
+  max-height: 85px;
+
 `
 
 const komorebiHeader = css`
@@ -79,14 +88,14 @@ export default function Login() {
 
     return (
         <div className={loginBackground}>
-            <img src= {komorebiLogo} className={loginImage} alt="Logo komorebi"/>
+            <img src= {loginLogo} className={loginImage} alt="Logo komorebi"/>
 
             <div className={formContainer}>
                 <form onSubmit={e => handleSubmit(auth, e)}>
                     <Grid container direction="vertical" rowSpacing={4}>
                         <Grid item xs={12}>
                             <div className={komorebiHeader}>
-                                <img src="https://via.placeholder.com/85x85.png"/>
+                                <img src={komorebiLogo} className={komologo}/>
                                 <span className={komorebiLabel}> Komorebi Connect </span>
                             </div>
                         </Grid>

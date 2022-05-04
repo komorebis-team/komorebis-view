@@ -63,7 +63,7 @@ export default function UsersCatalogue(){
                     rows={rows}
                 />
 
-                <Button theme={theme} onClick={toggle} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '3vw'}}> + ADD </Button>
+                <Button theme={theme} onClick={toggle} variant="contained" style={{alignSelf: "flex-end", marginRight: '6vw', marginTop: '1vw',marginBottom:'2vw'}}> + ADD </Button>
 
             </div>
             <Outlet/>
