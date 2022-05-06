@@ -71,7 +71,17 @@ const Recorder = ({
             console.log("IN upload")
             console.log(mediaBlob)
             console.log(getMediaStream)
-            let blob = await fetch(mediaBlobUrl).then(r => r.blob());
+            let blob = await fetch(mediaBlobUrl).then(async r => {
+                blob = r.blob()
+                console.log(blob)
+                let blob_text = await blob.text()
+                console.log(blob_text)
+                let blob2 = await new Blob([blob_text], {
+                    type: 'video/mp4'
+                });
+                console.log(blob2)
+                return blob2
+            });
             console.log(blob)
             const formData = new FormData();
             formData.append('file', blob)
