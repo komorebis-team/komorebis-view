@@ -7,7 +7,9 @@ import { Navigate } from "react-router-dom";
 import {useAuth} from "./Auth/AuthProvider";
 import komorebiLogo from './Assets/Komorebi2.png';
 import loginLogo from './Assets/Klogin.png';
-import { style, width } from '@mui/system';
+import {IconButton, InputAdornment} from "@mui/material";
+import {Visibility, VisibilityOff} from "@mui/icons-material";
+
 const loginBackground = css`
   width: 100vw; 
   height: 100vh;
@@ -73,6 +75,9 @@ export default function Login() {
     let auth = useAuth();
     let [username, setUsername] = useState("")
     let [password, setPassword] = useState("")
+    let [showPassword, setShowPassword] = useState(false);
+    let handleClickShowPassword = () => setShowPassword(!showPassword);
+    let handleMouseDownPassword = () => setShowPassword(!showPassword);
 
     let redirection = redirectUser(auth.user)
     console.log(auth.user)
@@ -89,7 +94,6 @@ export default function Login() {
     return (
         <div className={loginBackground}>
             <img src= {loginLogo} className={loginImage} alt="Logo komorebi"/>
-
             <div className={formContainer}>
                 <form onSubmit={e => handleSubmit(auth, e)}>
                     <Grid container direction="vertical" rowSpacing={4}>
@@ -117,12 +121,24 @@ export default function Login() {
                                 id="password"
                                 label="Password"
                                 variant="outlined"
-                                type="password"
+                                type={showPassword ? "text" : "password"}
                                 required
                                 fullWidth
                                 onChange={(e) => setPassword(e.target.value)}
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                                onMouseDown={handleMouseDownPassword}
+                                            >
+                                                {showPassword ? <Visibility /> : <VisibilityOff />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    )
+                                }}
                             />
-
                         </Grid>
                         <Grid item xs={4}/>
                         <Grid item xs={4}>
