@@ -25,7 +25,6 @@ root.render(
   <React.StrictMode>
       <BrowserRouter>
           <AuthProvider>
-
               <Routes>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/admin" element={
