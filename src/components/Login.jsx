@@ -8,6 +8,8 @@ import {useAuth} from "./Auth/AuthProvider";
 import komorebiLogo from './Assets/Komorebi2.png';
 import loginLogo from './Assets/Klogin.png';
 import { style, width } from '@mui/system';
+import {IconButton, InputAdornment} from "@mui/material";
+import {Visibility, VisibilityOff} from "@mui/icons-material";
 const loginBackground = css`
   width: 100vw; 
   height: 100vh;
@@ -89,7 +91,6 @@ export default function Login() {
     return (
         <div className={loginBackground}>
             <img src= {loginLogo} className={loginImage} alt="Logo komorebi"/>
-
             <div className={formContainer}>
                 <form onSubmit={e => handleSubmit(auth, e)}>
                     <Grid container direction="vertical" rowSpacing={4}>
@@ -113,16 +114,28 @@ export default function Login() {
                             />
                         </Grid>
                         <Grid item xs={12}>
-                             <TextField
+                            <TextField
                                 id="password"
                                 label="Password"
                                 variant="outlined"
-                                type="password"
+                                type={showPassword ? "text" : "password"}
                                 required
                                 fullWidth
                                 onChange={(e) => setPassword(e.target.value)}
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                                onMouseDown={handleMouseDownPassword}
+                                            >
+                                                {showPassword ? <Visibility /> : <VisibilityOff />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    )
+                                }}
                             />
-
                         </Grid>
                         <Grid item xs={4}/>
                         <Grid item xs={4}>
@@ -133,7 +146,6 @@ export default function Login() {
                     </Grid>
                 </form>
             </div>
-
         </div>
     );
 }
