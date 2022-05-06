@@ -7,33 +7,31 @@ import { Navigate } from "react-router-dom";
 import {useAuth} from "./Auth/AuthProvider";
 import komorebiLogo from './Assets/Komorebi2.png';
 import loginLogo from './Assets/Klogin.png';
-import { style, width } from '@mui/system';
 import {IconButton, InputAdornment} from "@mui/material";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
+
 const loginBackground = css`
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
-  display: flex; 
+  display: flex;
   flex-flow: row nowrap;
   align-items: center;
   box-sizing: border-box;
   padding: 2vw;
-  
+
   background-color: #B5B5B5;
 `
 
 const loginImage = css`
   object-fit: contain;
   max-width: 50vw;
-
 `
 const komologo = css
-`
-  object-fit: contain;
-  max-width: 85px;
-  max-height: 85px;
-
-`
+    `
+      object-fit: contain;
+      max-width: 85px;
+      max-height: 85px;
+    `
 
 const komorebiHeader = css`
   display: flex;
@@ -75,6 +73,9 @@ export default function Login() {
     let auth = useAuth();
     let [username, setUsername] = useState("")
     let [password, setPassword] = useState("")
+    let [showPassword, setShowPassword] = useState(false);
+    let handleClickShowPassword = () => setShowPassword(!showPassword);
+    let handleMouseDownPassword = () => setShowPassword(!showPassword);
 
     let redirection = redirectUser(auth.user)
     console.log(auth.user)
@@ -146,6 +147,7 @@ export default function Login() {
                     </Grid>
                 </form>
             </div>
+
         </div>
     );
 }
