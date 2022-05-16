@@ -57,7 +57,7 @@ export default function SupervisorPersonalInfo() {
                             readOnly: true,
                         }} style={{ width: '90%' }} />
                         <Box mt={1}>
-                            <TextField id="standard-basic" label="Email" defaultValue="deigo@gmail.com" variant="standard" InputProps={{
+                            <TextField id="standard-basic" label="Email" defaultValue="diego@gmail.com" variant="standard" InputProps={{
                                 readOnly: true,
                             }} style={{ width: '90%' }} />
                         </Box>
