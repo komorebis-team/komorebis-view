@@ -75,7 +75,7 @@ const Recorder = ({
             formData.append('file', audioFile)
             formData.append("videoId", recordingNumber)
             axios.post(
-                "http://localhost:8081/file-upload",
+                "http://54.212.4.21:8080/file-upload",
                 formData,
                 {
                     headers: {"Content-Type": "multipart/form-data"},
