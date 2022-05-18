@@ -32,7 +32,7 @@ const Recorder = ({
             startRecording: startRecord,
             stopRecording: stopRecord,
             mediaBlobUrl
-        } = useReactMediaRecorder({screen: true, audio: true, video})
+        } = useReactMediaRecorder({screen: true, audio: true, video: true})
 
         const startRecording = () => {
             return startRecord()
@@ -69,22 +69,11 @@ const Recorder = ({
 
         const uploadRecording = async () => {
             console.log("IN upload")
-            console.log(mediaBlob)
-            console.log(getMediaStream)
-            let blob = await fetch(mediaBlobUrl).then(async r => {
-                blob = r.blob()
-                console.log(blob)
-                let blob_text = await blob.text()
-                console.log(blob_text)
-                let blob2 = await new Blob([blob_text], {
-                    type: 'video/mp4'
-                });
-                console.log(blob2)
-                return blob2
-            });
-            console.log(blob)
+            let blob = await fetch(mediaBlobUrl).then(async r => r.blob());
+            const audioFile = new File([blob], 'file.mp4', { type: 'video/mp4' });
             const formData = new FormData();
-            formData.append('file', blob)
+            formData.append('file', audioFile)
+            formData.append("videoId", recordingNumber)
             axios.post(
                 "http://localhost:8081/file-upload",
                 formData,
