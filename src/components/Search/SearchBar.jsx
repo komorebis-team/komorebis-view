@@ -33,7 +33,7 @@ export default function SearchBar(){
                     <Grid item xs={0.5}> </Grid>
                     <Grid item xs={2}>
                         <FormControl fullWidth>
-                            <Button theme={orangeButton} variant="contained" fullWidth> Buscar </Button>
+                            <Button theme={orangeButton} variant="contained" fullWidth> Search </Button>
                         </FormControl>
                     </Grid>
                 </Grid>

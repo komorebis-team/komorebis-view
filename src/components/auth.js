@@ -30,7 +30,7 @@ const auth = {
             auth.user.lastname = ""
             auth.user.username = ""
             auth.user.role = ""
-    }
+        }
         /* This is used for login using axios. It is commented since we still dont have a remote server.
         else {
 

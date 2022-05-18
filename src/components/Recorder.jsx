@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Grid from "@mui/material/Grid";
 import {Button, Stack, Typography} from "@mui/material";
+import axios from 'axios'
 
 import {useReactMediaRecorder} from "react-media-recorder";
 import {css} from "@emotion/css";
@@ -24,11 +25,14 @@ const Recorder = ({
 
     const RecordView = () => {
         const {
+            error,
             status,
+            mediaBlob,
+            getMediaStream,
             startRecording: startRecord,
             stopRecording: stopRecord,
             mediaBlobUrl
-        } = useReactMediaRecorder({screen: true, audio: true, video})
+        } = useReactMediaRecorder({screen: true, audio: true, video: true})
 
         const startRecording = () => {
             return startRecord()
@@ -63,6 +67,23 @@ const Recorder = ({
             }
         };
 
+        const uploadRecording = async () => {
+            console.log("IN upload")
+            let blob = await fetch(mediaBlobUrl).then(async r => r.blob());
+            const audioFile = new File([blob], 'file.mp4', { type: 'video/mp4' });
+            const formData = new FormData();
+            formData.append('file', audioFile)
+            formData.append("videoId", recordingNumber)
+            axios.post(
+                "http://54.212.4.21:8080/file-upload",
+                formData,
+                {
+                    headers: {"Content-Type": "multipart/form-data"},
+                }).then((response) => {
+                console.log(response);
+            });
+        }
+
         return (
             <div className={recorderStyle}>
                 <Stack direction="row" spacing={2}>
@@ -82,8 +103,8 @@ const Recorder = ({
                         </Button>
                     )}
                     {mediaBlobUrl && status && status === "stopped" && (
-                        <Button variant="container" type="submit" onClick={downloadRecording}>
-                            Save Recording
+                        <Button variant="container" type="submit" onClick={uploadRecording}>
+                            Upload Recording
                         </Button>
                     )}
                 </Stack>
