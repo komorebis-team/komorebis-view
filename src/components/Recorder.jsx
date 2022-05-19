@@ -75,7 +75,7 @@ const Recorder = ({
             formData.append('file', audioFile)
             formData.append("videoId", recordingNumber)
             axios.post(
-                "https://54.212.4.21/file-upload",
+                "https://komorebi-apis.herokuapp.com/file-upload",
                 formData,
                 {
                     headers: {"Content-Type": "multipart/form-data"},
