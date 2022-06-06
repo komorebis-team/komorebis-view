@@ -32,7 +32,7 @@ const Recorder = ({
             startRecording: startRecord,
             stopRecording: stopRecord,
             mediaBlobUrl
-        } = useReactMediaRecorder({screen: true, audio: true, video: true})
+        } = useReactMediaRecorder({screen: true, audio:false})
 
         const startRecording = () => {
             return startRecord()
@@ -72,10 +72,11 @@ const Recorder = ({
             let blob = await fetch(mediaBlobUrl).then(async r => r.blob());
             const audioFile = new File([blob], 'file.mp4', { type: 'video/mp4' });
             const formData = new FormData();
-            formData.append('file', audioFile)
-            formData.append("videoId", recordingNumber)
+            formData.append('recordingFile', audioFile)
+            formData.append("videoID", "kdkjskdksdj")
+            formData.append("categoryName", "category")
             axios.post(
-                "https://komorebi-apis.herokuapp.com/file-upload",
+                "http://localhost:8081/v1/recording/save",
                 formData,
                 {
                     headers: {"Content-Type": "multipart/form-data"},
@@ -103,8 +104,8 @@ const Recorder = ({
                         </Button>
                     )}
                     {mediaBlobUrl && status && status === "stopped" && (
-                        <Button variant="container" type="submit" onClick={uploadRecording}>
-                            Upload Recording
+                        <Button variant="container" type="submit" onClick={downloadRecording}>
+                            Download Recording
                         </Button>
                     )}
                 </Stack>
